@@ -1,7 +1,7 @@
 <template>
   
     <div class="header clearfix">
-    	<h3 class="text-muted">Project name</h3>
+    	
         <nav class="pull-right" style="margin-left: 400px;">
           
           <ul class="nav nav-pills pull-right">
@@ -16,6 +16,10 @@
 
             <router-link tag="li" to='/feed' v-if="isAuth">
               <a href="">Feed</a>
+            </router-link>
+
+            <router-link tag="li" to='/products/create' v-if="isAuth">
+              <a href="">Product Create</a>
             </router-link>
          
             <router-link tag="li" to='/logout' v-if="isAuth">

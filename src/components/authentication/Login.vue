@@ -14,7 +14,7 @@
         <tr>
           <td>Password</td>
           <td>:</td>
-          <td><input type="password" placeholder="password" name="password" v-model="password"></td>
+          <td><input type="password" placeholder="Password" v-model="password"></td>
         </tr>
 
         <tr>
@@ -43,7 +43,7 @@
           
           var data = {
             client_id: 2,
-            client_secret: 'Z39c5RQa20C9iNp5UnanRSwuSMfIgdnHKj0XMhNJ',
+            client_secret: 'IROV2pwlGllOb7M84oOg8MJ28UfvSNOjF0848tsQ',
             grant_type: 'password',
             username: this.email,
             password: this.password

@@ -1,6 +1,6 @@
 <template>
 	<div class="row">
-		<my-product v-for="product in products" :product="product"></my-product>
+		<my-product v-for="product in products" :product="product" :authenticatedUser="authenticatedUser"></my-product>
         
 	</div>
 </template>
@@ -15,6 +15,12 @@
 				products: []
 			}
 		},
+
+		computed: {
+			authenticatedUser () {
+				return this.$auth.getAuthenticatedUser()
+			}
+		}, // if we put this authenticatedUser in data then we do not get the user after refreshing. so we put this in the computed.
 
 		components: {
 			'my-product': Product
