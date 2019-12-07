@@ -43,7 +43,7 @@
           
           var data = {
             client_id: 2,
-            client_secret: 'IROV2pwlGllOb7M84oOg8MJ28UfvSNOjF0848tsQ',
+            client_secret: 'QF2EK0tmdtrfqEFVsEvo83CVHjvmPv5Hbcjvoz50',
             grant_type: 'password',
             username: this.email,
             password: this.password

@@ -16,10 +16,10 @@
 							<label>Product Description</label>
 							<textarea type="text" class="form-control" v-model="product.description"></textarea>
 						</div>
-						<div class="form-group">
-							<label>Product Photo</label>
-							<input type="file" class="form-control" @change="imageChanged">							
-						</div>
+						<div>
+						    <!-- <img src:"image" class="uploading-image" /> -->
+						    <input type="file" accept="image/*" @change=uploadImage>
+						</div>      
 						<button class="btn btn-success pul-right" v-show="product.name && product.price && product.description" @click="create">
 						   Save
 						</button>
@@ -35,7 +35,7 @@
 
 
 	export default {
-		
+		name:'imageUpload',
 
 		data() {
 			return {
@@ -43,12 +43,23 @@
 					name: '',
 					price: 0,
 					description: '',
-					file: ''
+					image:null
 				}
 			}
 		},
 
 		methods: {
+
+			uploadImage(e){
+                const image = e.target.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(image);
+                reader.onload = e =>{
+                    this.product.image = e.target.result;
+                    console.log(this.product);
+                };
+            },
+        
 
 			/*imageChanged (e) {
 				console.log(e.target.files[0])
@@ -60,20 +71,11 @@
                 	this.product.image = e.target.result
                 }
                 console.log(this.product)
-			},*/
-
-			imageChanged (e) {
-				var reader = new FileReader();
-
-			reader.onload = function(e) {
-			  var text = reader.result;
-			}
-
-			reader.readAsText(file, encoding);
-			
 			},
+*/
 
-			
+
+
 
 			create () {
 				this.$http.post('api/products', this.product)

@@ -4,7 +4,7 @@
 		<div class="container">
 			
 			<div style="border: 2px solid green; background-color: blue;">
-				<img src="images/1.jpg" style="" class="pull-right">
+				<img :src="'http://127.0.0.1:8000/' + product.image" style="width: 100px; height: 100px; border-radius: 50%;" class="pull-right">
 				<h5 style="color: #fff;">User Id: {{ product.user_id }}</h5>
 				<h3 style="color: white; padding-left: 5px;">{{ product.name }}</h3>
 				<p style="color: white; padding-left: 5px;">{{ product.price }}</p>
